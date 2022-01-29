@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User</title>
+</head>
+<body>
+  <!-- Header -->
+      {{>header}}
+
+  <!-- Content -->
+  <div>
+      <h1>Create Member</h1>
+      <p>--------------------------------</p>
+      <form action="" >
+        <fieldset>
+          <label>username:</label>
+          <input type="text" id="username" required>
+          <br>
+          <br>
+          <label>email:</label>
+          <input type="text" id="email" required>
+          <br>
+          <br>
+          <label>age:</label>
+          <input type="text" id="age" required>
+          <br>
+          <br>
+          <label>balance:</label>
+          <input type="text" id="balance"required>
+          <br>
+          <br>
+          <button type="submit">Button</button>
+        </fieldset>
+      </form>
+      
+      <p>--------------------------------</p>
+      <h1>Members List</h1>
+      <table>
+          <thead>
+              <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">Balance</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each data}}
+                <tr>
+                  <td>{{this.name}}</td>
+                  <td>{{this.email}}</td>
+                  <td>{{this.balance}}</td>
+                </tr>
+              {{/each}}
+            </tbody>
+      </table>
+  </div>
+  <!-- Footer -->
+      {{>footer}}
+  <script src="/js/app.js"></script>
+</body>
+</html>

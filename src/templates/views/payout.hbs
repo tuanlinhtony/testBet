@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw</title>
+</head>
+<body>
+    {{>header}}
+    <div>
+          <h1>Withdraw</h1>
+          <p>--------------------------------</p>
+          <form name="myForm" action="/fundtransfer" onsubmit="return validateForm()" method="post">
+                <label for="users">Choose a member:</label> 
+                <select name="" id="selectUser">
+                    <option selected="selected">Select Member</option>
+                    {{#each data}}
+                    <option value="{{this.balance}}/{{this._id}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+                <p>Available Amount:</p>
+                <h3 id="amountAvailable">0.0</h3>
+                <p>Amount:</p>
+                <input type="text">
+                <p>Amount required</p>
+                <button type="submit"></button>
+          </form>
+      </div>
+    {{>footer}}
+    <script src="/js/app.js"></script>
+</body>
+</html>
