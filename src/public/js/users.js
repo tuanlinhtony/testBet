@@ -7,6 +7,10 @@ const age = document.querySelector('#age')
 const balance = document.querySelector('#balance')
 
 
+
+// const widhdrawalForm = document.querySelector('#widhdrawalForm')
+// const withdrawalAmount = document.querySelector('#withdrawalAmount')
+
 addUserForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const data = {
@@ -35,15 +39,10 @@ addUserForm.addEventListener('submit', (e) => {
     window.location.reload()
 })
 
-const selectUser = document.querySelector('#selectUser')
 
-selectUser.addEventListener('change', (e) => {
-    console.log(selectUser.value)
-    const position = selectUser.value.search('/')
-    const amountValue = selectUser.value.substring(0, position)
-    const amountAvailable = document.querySelector('#amountAvailable')
-    amountAvailable.textContent = amountValue
-})
+
+
+
 
 
 
