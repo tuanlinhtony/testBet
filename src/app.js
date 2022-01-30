@@ -1,7 +1,7 @@
 const http = require('http')
 const path = require('path')
 const hbs = require('hbs')
-require('./database/mongoose')
+require('./db/mongoose')
 const bodyParser = require('body-parser')
 const express = require('express')
 
