@@ -4,8 +4,10 @@
   "description": "this is test page for marco",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "env-cmd -f ./config/dev.env nodemon index.js"
+    
   },
   "author": "tony",
   "license": "MIT",
