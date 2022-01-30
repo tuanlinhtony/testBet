@@ -1,11 +1,10 @@
 const express = require('express')
 const router = new express.Router()
 
-
 const User = require('../models/user')
 
 // Add new user
-router.post('/users/add', async (req,res) => {
+router.post('/users/add', async ( req, res) => {
     const user = new User(req.body)
     console.log(user)
     try{

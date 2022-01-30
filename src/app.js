@@ -1,15 +1,16 @@
 const http = require('http')
 const path = require('path')
 const hbs = require('hbs')
+require('./database/mongoose')
 const bodyParser = require('body-parser')
 const express = require('express')
-
 
 const userRouter = require('./routers/user')
 const transactionRouter = require('./routers/transactions')
 const pageRouter = require('./routers/page')
 
 const app = express()
+
 
 //Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, './public')

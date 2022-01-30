@@ -6,11 +6,6 @@ const email = document.querySelector('#email')
 const age = document.querySelector('#age')
 const balance = document.querySelector('#balance')
 
-
-
-// const widhdrawalForm = document.querySelector('#widhdrawalForm')
-// const withdrawalAmount = document.querySelector('#withdrawalAmount')
-
 addUserForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const data = {
