@@ -3,7 +3,7 @@ const path = require('path')
 const hbs = require('hbs')
 const bodyParser = require('body-parser')
 const express = require('express')
-const mongoose = require('./database/mongoose')
+
 
 const userRouter = require('./routers/user')
 const transactionRouter = require('./routers/transactions')
