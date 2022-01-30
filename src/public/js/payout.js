@@ -4,6 +4,17 @@ const widhdrawalForm = document.querySelector('form')
 const withdrawalAmount = document.querySelector('#withdrawalAmount')
 const selectUser = document.querySelector('#selectUser')
 
+const url = document.querySelector('#url')
+const merchantid = document.querySelector('#merchantid')
+const bankName = document.querySelector('#bankName')
+const accountNumber = document.querySelector('#accountNumber')
+const amount = document.querySelector('#amount')
+const sign = document.querySelector('#sign')
+const channel = document.querySelector('#channel')
+const ipAddress = document.querySelector('#ipAddress')
+
+
+
 // show Available Amount
 selectUser.addEventListener('change', (e) => {
     // Create our number formatter.
@@ -25,10 +36,38 @@ selectUser.addEventListener('change', (e) => {
 
 widhdrawalForm.addEventListener('submit', (e) => {
     e.preventDefault()
+    const position = selectUser.value.search('/')
+    const userid = selectUser.value.substring(position+1)
+    
+
     const data = {
-        userid: username.value,
-        email: email.value,
-        age : age.value,
-        balance: balance.value
+        url: url.value,
+        userid: userid,
+        merchantid: merchantid.value,
+        bankName : bankName.value,
+        accountNumber : accountNumber.value,
+        accountName : accountName.value,
+        amount : amount.value,
+        sign : sign.value,
+        channel : channel.value,
+        ipAddress : ipAddress.value,
     }
+
+    fetch("/fundtransfer", {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' }
+    }).then((response) => {
+        console.log(location)
+        response.json().then((data) =>{
+            if(data.error){
+                messageOne.textContent = data.error
+
+            }else{
+                console.log(data)
+               
+            }
+        })
+    })
+    widhdrawalForm.reset()
 })

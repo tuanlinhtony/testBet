@@ -2,7 +2,7 @@ const request = require('postman-request')
 const axios = require('axios')
 
 const submitOrder = (transaction, callback) => {
-    const url = process.env.THIRD_PARTY_URL
+    const url = transaction.url
     console.log(url)
     const lastTransaction = {
         transid: transaction.transid,

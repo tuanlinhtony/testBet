@@ -10,7 +10,25 @@
     {{>header}}
     <div>
           <h1>Withdraw</h1>
+          <p>----------------------------------------</p>
+                <h3>Third party info</h3>
+                <label>URL:</label>
+                <input id="url" type="text" required>
+                <br><br>
+                <label>Merchant id:</label>
+                <input id="merchantid" type="text" required>
+                <br><br>
+                <label>Channel:</label>
+                <input id="channel" type="text" required>
+                <br><br>
+                <label>Ip Address:</label>
+                <input id="ipAddress" type="text" required>
+                <br><br>
+                <label>Sign:</label>
+                <input id="sign" type="text" required>
+                <br><br>
           <p>--------------------------------</p>
+          <h3>Withdraw info</h3>
           <form id="widhdrawalForm"  action="/fundtransfer"  method="post">
                 <label for="users">Choose a member:</label> 
                 <select name="" id="selectUser">
@@ -21,9 +39,20 @@
                 </select>
                 <p>Available Amount:</p>
                 <h3 id="amountAvailable">0.0</h3>
-                <p>Amount:</p>
-                <input id="withdrawalAmount" type="text" required>
-                <p>Amount required</p>
+                <label>Amount:</label>
+                <input id="amount" type="text" required>
+                
+                <p>----------------------------------------</p>
+                <h3>Bank Info</h3>
+                <label>Bank Name:</label>
+                <input id="bankName" type="text" required>
+                <br><br>
+                <label>Account Number:</label>
+                <input id="accountNumber" type="text" required>
+                <br><br>
+                <label>Account Name:</label>
+                <input id="accountName" type="text" required>
+                <br><br>
                 <button type="submit">Withdraw</button>
           </form>
       </div>

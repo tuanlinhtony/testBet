@@ -7,7 +7,15 @@ const transactionSchema = new mongoose.Schema(
             type: String,
             required: true
         },
+        url: {
+            type: String,
+            required: true
+        },
         userid: {
+            type: String,
+            required: true
+        },
+        merchantid: {
             type: String,
             required: true
         },
